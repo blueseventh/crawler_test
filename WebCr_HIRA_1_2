@@ -6,11 +6,15 @@ import requests
 import bs4
 
 
+yearinput = raw_input("Year: ")
+mdfeeCdinput = raw_input("Code: ").upper()
+
+
 endpoint = "http://apis.data.go.kr/B551182/mdlrtActionInfoService/getMdlrtActionByClassesStats?"
 servicekey = "MSHdqGm%2BtYTAvwvKn%2BkajdvrMSOxJt840YrxsEGGfCHzkClo0BQjI33e%2B5QACU%2FrLNFuf60USAJPlHWA8GgZIg%3D%3D"
-mdfeeCd = "P4552"
+mdfeeCd = mdfeeCdinput
 medTp = "2"
-year = "2014"
+year = yearinput
 
 paramset = "servicekey=" + servicekey + "&" + "mdfeeCd=" + mdfeeCd + "&" + "medTp=" + medTp + "&" + "year=" + year
 
@@ -30,5 +34,5 @@ for item in items:
 
 print(data)
 
-
-
+grade = bs_obj.findAll("execfq01")
+grade
